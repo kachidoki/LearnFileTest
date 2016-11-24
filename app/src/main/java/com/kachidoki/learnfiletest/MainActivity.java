@@ -167,14 +167,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean writeResponseBodyToDisk(ResponseBody body) {
+        Log.e("FileDownload","writeResponseBodyToDisk is start");
         try {
             // todo change the file location/name according to your needs
-            File futureStudioIconFile = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC) ,"test.mp3");
+            File futureStudioIconFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) ,"test.apk");
             InputStream inputStream = null;
             OutputStream outputStream = null;
             Log.e("FileDownload","InOut is ready");
             try {
-                byte[] fileReader = new byte[99999];
+                byte[] fileReader = new byte[2048];
                 long fileSize = body.contentLength();
                 long fileSizeDownloaded = 0;
                 inputStream = body.byteStream();
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     outputStream.write(fileReader, 0, read);
                     fileSizeDownloaded += read;
-                    Log.d("FileDownload", "file download: " + fileSizeDownloaded + " of " + fileSize);
+//                    Log.d("FileDownload", "file download: " + fileSizeDownloaded + " of " + fileSize);
                 }
                 outputStream.flush();
                 return true;
