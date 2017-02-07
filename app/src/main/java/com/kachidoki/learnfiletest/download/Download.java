@@ -14,6 +14,6 @@ import rx.Observer;
  */
 public interface Download {
     @Streaming
-    @GET("/mobilesafe/shouji360/360safesis/360MobileSafe_6.2.3.1060.apk")
+    @GET("http://ws.stream.qqmusic.qq.com/102954019.m4a?fromtag=46")
     Observable<ResponseBody> download();
 }

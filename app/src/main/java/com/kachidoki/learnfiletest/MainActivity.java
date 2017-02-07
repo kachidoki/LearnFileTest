@@ -209,7 +209,6 @@ public class MainActivity extends AppCompatActivity {
      *  使用Retrofit下载文件demo
      */
     private boolean writeResponseBodyToDisk(ResponseBody body) {
-        Log.e("FileDownload","writeResponseBodyToDisk is start");
         try {
             // todo change the file location/name according to your needs
             File futureStudioIconFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) ,"test.apk");

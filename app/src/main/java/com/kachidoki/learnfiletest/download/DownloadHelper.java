@@ -32,7 +32,7 @@ public class DownloadHelper {
         if (download==null){
             Log.e("Test","Retrofit.Builder is start::::::");
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://msoftdl.360.cn")
+                    .baseUrl("http://ws.stream.qqmusic.qq.com/")
                     .client(okHttpClient)
                     .addConverterFactory(gsonConverterFactory)
                     .addCallAdapterFactory(rxJavaCallAdapterFactory)
